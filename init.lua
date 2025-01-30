@@ -658,6 +658,7 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
+        'typescript-language-server',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -841,6 +842,8 @@ require('lazy').setup({
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
     'folke/tokyonight.nvim',
+    'edeneast/nightfox.nvim',
+    'morhetz/gruvbox',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     init = function()
       -- Load the colorscheme here.
@@ -939,7 +942,7 @@ require('lazy').setup({
   --    This is the easiest way to modularize your config.
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
   --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!
@@ -969,3 +972,14 @@ require('lazy').setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+vim.opt.relativenumber = true
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'move one line down' })
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'move one line up' })
+vim.keymap.set('v', '<leader>y', 'ggyG', { desc = 'yank whole file to clipboard' })
+vim.keymap.set('v', '<leader>Y', 'gg"+yG', { desc = 'yank whole file to system clipboard' })
+vim.cmd [[
+colorscheme gruvbox
+set tabstop=2 shiftwidth=0
+set autoindent
+set expandtab
+]]
