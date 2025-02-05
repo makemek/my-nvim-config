@@ -1005,6 +1005,7 @@ vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'move one line down' })
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'move one line up' })
 vim.keymap.set('v', '<leader>y', 'ggyG', { desc = 'yank whole file to clipboard' })
 vim.keymap.set('v', '<leader>Y', 'gg"+yG', { desc = 'yank whole file to system clipboard' })
+vim.keymap.set('n', '<leader>i', vim.diagnostic.open_float, { desc = 'show full diagnostic info' })
 vim.cmd [[
 colorscheme gruvbox
 set tabstop=2 shiftwidth=0
