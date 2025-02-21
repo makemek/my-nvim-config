@@ -409,6 +409,7 @@ require('lazy').setup({
       for _, d in ipairs {
         '**/.*/',
         'node_modules',
+        'dist',
         '/target/',
         '/build/',
         '/.cache/',
