@@ -1010,6 +1010,10 @@ vim.keymap.set('v', '<leader>Y', 'gg"+yG', { desc = 'yank whole file to system c
 vim.keymap.set('n', '<leader>i', vim.diagnostic.open_float, { desc = 'show full diagnostic info' })
 vim.keymap.set('n', '<leader>,', '$a,<Esc>', { desc = 'append comma' })
 vim.keymap.set('n', '<leader>w', ':wa<CR>', { desc = 'save' })
+vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'page down center cursor' })
+vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'page up center cursor' })
+vim.keymap.set('n', '<C-f>', '<C-f>zz')
+vim.keymap.set('n', '<C-b>', '<C-b>zz')
 vim.cmd [[
 colorscheme gruvbox
 set tabstop=2 shiftwidth=0
