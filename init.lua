@@ -1014,6 +1014,7 @@ vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'page down center cursor' })
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'page up center cursor' })
 vim.keymap.set('n', '<C-f>', '<C-f>zz')
 vim.keymap.set('n', '<C-b>', '<C-b>zz')
+vim.keymap.set('n', 'U', '<C-r>', { desc = 'redo' })
 vim.cmd [[
 colorscheme gruvbox
 set tabstop=2 shiftwidth=0
